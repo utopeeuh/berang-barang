@@ -18,7 +18,6 @@ class TransactionDetail extends Model
         'destination',
         'schedule',
         'cost',
-        'created_at',
     ];
 
     public function transaction()
