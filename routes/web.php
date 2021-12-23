@@ -24,3 +24,7 @@ Route::post('/order-store', [App\Http\Controllers\TransactionController::class, 
 Route::post('/checkout-store/{transaction_id}', [App\Http\Controllers\TransactionController::class, 'checkout_store']);
 
 Route::get('/checkout/{transaction_id}', [App\Http\Controllers\TransactionController::class, 'checkout_view']);
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
