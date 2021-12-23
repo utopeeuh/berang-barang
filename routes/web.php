@@ -16,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\PagesController::class, 'index']);
+Route::get('/order', [App\Http\Controllers\PagesController::class, 'order']);
+Route::get('/my-transactions', [App\Http\Controllers\TransactionController::class, 'my_trans']);
+Route::get('/transaction/{transaction_id}', [App\Http\Controllers\TransactionController::class, 'transaction_detail']);
 
-Auth::routes();
+Route::post('/order-store', [App\Http\Controllers\TransactionController::class, 'store']);
+Route::post('/checkout-store/{transaction_id}', [App\Http\Controllers\TransactionController::class, 'checkout_store']);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/checkout/{transaction_id}', [App\Http\Controllers\TransactionController::class, 'checkout_view']);

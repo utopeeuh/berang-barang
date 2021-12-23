@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Promo extends Model
 {
     use HasFactory;
+    public $timestamps = false;
     protected $table = "promos";
     protected $guarded = [];
     protected $fillable = [
@@ -17,6 +18,6 @@ class Promo extends Model
 
     public function transactions()
     {
-        return $this->belongsTo(Transaction::class);
+        return $this->hasMany(Transaction::class);
     }
 }

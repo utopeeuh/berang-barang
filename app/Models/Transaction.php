@@ -13,29 +13,27 @@ class Transaction extends Model
     protected $guarded = [];
     protected $fillable = [
         'user_id',
-        'promo_id',
         'truck_id',
-        'payment_method_id',
     ];
 
     public function user()
     {
-        return $this->hasOne(User::class);
+        return $this->belongsTo(User::class);
     }
 
     public function promo()
     {
-        return $this->hasOne(Promo::class);
+        return $this->belongsTo(Promo::class);
     }
 
     public function truck()
     {
-        return $this->hasOne(Truck::class);
+        return $this->belongsTo(Truck::class);
     }
 
     public function payment_method()
     {
-        return $this->hasOne(PaymentMethod::class);
+        return $this->belongsTo(PaymentMethod::class);
     }
 
     public function transaction_detail()

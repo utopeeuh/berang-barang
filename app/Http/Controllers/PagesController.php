@@ -2,20 +2,17 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 class PagesController extends Controller
 {
     //
     public function index()
     {
-        return view('/');
+        return view('index');
     }
 
-    //pake buat create order (?)
-
-    // public function __construct()
-    // {
-    //     $this->middleware('auth');
-    // }
+    public function order()
+    {
+        $this->middleware('auth');
+        return view('order');
+    }
 }
