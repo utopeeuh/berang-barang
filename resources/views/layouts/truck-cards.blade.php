@@ -7,7 +7,7 @@
             <p class="card-text">SUPPORTS HERE</p>
             <p class="card-text">DESCRIPTION HERE</p>
         </div>
-        <input type="radio" id="small-truck" name="truck_id" value="1">
+        <input type="radio" id="small-truck" name="truck_id" value="1" required>
     </div>
     <div class="card">
         <img class="card-img-top" src="..." alt="medium truck">

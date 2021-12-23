@@ -6,7 +6,8 @@
         @csrf
         <div class="form-group">
             <h4>Payment Method</h4>
-            <input type="radio" class="btn-check" name="payment_method_id" id="pmid1" autocomplete="off" value="1">
+            <input type="radio" class="btn-check" name="payment_method_id" id="pmid1" autocomplete="off" value="1"
+                required>
             <label class="btn btn-secondary" for="pmid1">Debit Card</label>
 
             <input type="radio" class="btn-check" name="payment_method_id" id="pmid2" autocomplete="off" value="2">
