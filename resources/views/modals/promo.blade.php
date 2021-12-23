@@ -31,6 +31,13 @@
 </div>
 
 <script>
+    var promos = document.querySelectorAll('input[type=radio][name="promo_id"]');
+
+    Array.prototype.forEach.call(promos, function(radio) {
+        radio.addEventListener('change', updateDiscount);
+    });
+
+
     function clearPromo() {
         var ele = document.getElementsByName("promo_id");
 

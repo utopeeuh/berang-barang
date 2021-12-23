@@ -51,4 +51,16 @@
 
     </div>
 
+    <div>
+        <h3>Driver Information</h3>
+
+        <img src="{{ $t->driver->picture }}" alt="Picture of driver {{ $t->driver_id }}">
+
+        <h5>Name</h5>
+        <h6>{{ $t->driver->name }}</h6>
+
+        <h5>Dimensions</h5>
+        <h6>{{ $t->driver->phone_number }}</h6>
+    </div>
+
 @endsection

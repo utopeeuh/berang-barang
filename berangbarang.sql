@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2021 at 12:26 PM
+-- Generation Time: Dec 23, 2021 at 02:11 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 8.0.10
 
@@ -20,6 +20,28 @@ SET time_zone = "+00:00";
 --
 -- Database: `berangbarang`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `drivers`
+--
+
+CREATE TABLE `drivers` (
+  `id` bigint(20) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `phone_number` varchar(13) NOT NULL,
+  `picture` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `drivers`
+--
+
+INSERT INTO `drivers` (`id`, `name`, `phone_number`, `picture`) VALUES
+(1, 'John', '081512312312', 'https://randomuser.me/api/portraits/med/men/99.jpg'),
+(2, 'Andi', '081578978978', 'https://randomuser.me/api/portraits/med/men/98.jpg'),
+(3, 'Bagus', '081545645645', 'https://randomuser.me/api/portraits/med/men/97.jpg');
 
 -- --------------------------------------------------------
 
@@ -127,7 +149,7 @@ CREATE TABLE `promos` (
 --
 
 INSERT INTO `promos` (`id`, `name`, `discount`, `isused`) VALUES
-(1, 'PROMO1', 10, 0);
+(1, 'PROMO1', 10, 1);
 
 -- --------------------------------------------------------
 
@@ -140,8 +162,17 @@ CREATE TABLE `transactions` (
   `user_id` bigint(20) UNSIGNED NOT NULL,
   `truck_id` bigint(20) UNSIGNED NOT NULL,
   `promo_id` bigint(20) UNSIGNED DEFAULT NULL,
-  `payment_method_id` bigint(20) UNSIGNED DEFAULT NULL
+  `payment_method_id` bigint(20) UNSIGNED DEFAULT NULL,
+  `driver_id` bigint(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transactions`
+--
+
+INSERT INTO `transactions` (`id`, `user_id`, `truck_id`, `promo_id`, `payment_method_id`, `driver_id`) VALUES
+(16, 1, 3, NULL, 2, 2),
+(18, 1, 1, NULL, 2, 1);
 
 -- --------------------------------------------------------
 
@@ -160,6 +191,14 @@ CREATE TABLE `transaction_details` (
   `created_at` datetime NOT NULL DEFAULT current_timestamp(),
   `updated_at` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction_details`
+--
+
+INSERT INTO `transaction_details` (`transaction_id`, `phone_number`, `status`, `pickup`, `destination`, `schedule`, `cost`, `created_at`, `updated_at`) VALUES
+(16, '085881142248', 'Ongoing', 'Jl. Cempaka Putih Tengah XXX no.6', 'AAAAA', '2021-12-23 12:01:00', 29.9, '2021-12-23 20:03:33', '2021-12-23 13:03:33'),
+(18, '0000000000', 'Ongoing', 'AAA', 'AAA', '2022-01-07 20:10:00', 11, '2021-12-23 20:10:54', '2021-12-23 13:10:54');
 
 -- --------------------------------------------------------
 
@@ -213,6 +252,12 @@ INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `re
 --
 
 --
+-- Indexes for table `drivers`
+--
+ALTER TABLE `drivers`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -259,7 +304,8 @@ ALTER TABLE `transactions`
   ADD KEY `user_id` (`user_id`),
   ADD KEY `promo_id` (`promo_id`),
   ADD KEY `payment_method_id` (`payment_method_id`),
-  ADD KEY `truck_id` (`truck_id`);
+  ADD KEY `truck_id` (`truck_id`),
+  ADD KEY `driver_id` (`driver_id`);
 
 --
 -- Indexes for table `transaction_details`
@@ -283,6 +329,12 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `drivers`
+--
+ALTER TABLE `drivers`
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `failed_jobs`
@@ -312,7 +364,7 @@ ALTER TABLE `promos`
 -- AUTO_INCREMENT for table `transactions`
 --
 ALTER TABLE `transactions`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `trucks`
@@ -334,6 +386,7 @@ ALTER TABLE `users`
 -- Constraints for table `transactions`
 --
 ALTER TABLE `transactions`
+  ADD CONSTRAINT `fk_driver` FOREIGN KEY (`driver_id`) REFERENCES `drivers` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_paymentmethod` FOREIGN KEY (`payment_method_id`) REFERENCES `payment_methods` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_promo` FOREIGN KEY (`promo_id`) REFERENCES `promos` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `fk_truck` FOREIGN KEY (`truck_id`) REFERENCES `trucks` (`id`) ON DELETE CASCADE ON UPDATE CASCADE,

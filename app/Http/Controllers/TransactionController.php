@@ -35,12 +35,16 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         $request->request->add(['user_id' => Auth::user()->id]);
+        $driver_id = app('App\Http\Controllers\DriverController')->getRandomDriverID();
+        $request->request->add(['driver_id' => $driver_id]);
         $transaction_data = $request->except('_token', 'phone_number', 'pickup', 'destination', 'schedule');
+
         TransactionModel::insert($transaction_data);
+
         $transaction_id = TransactionModel::latest('id')->first()->id;
 
         $request->request->add(['transaction_id' => $transaction_id]);
-        $detail_data = $request->except('_token', 'user_id', 'truck_id');
+        $detail_data = $request->except('_token', 'user_id', 'truck_id', 'driver_id');
         TDModel::insert($detail_data);
 
         return redirect('/checkout/' . $transaction_id);
@@ -96,6 +100,6 @@ class TransactionController extends Controller
         $transaction->save();
 
         // return redirect('/transaction/' . $transaction_id);
-        return redirect('/');
+        return redirect('/transaction/' . $transaction_id);
     }
 }

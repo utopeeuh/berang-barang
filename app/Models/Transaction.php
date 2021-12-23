@@ -14,6 +14,7 @@ class Transaction extends Model
     protected $fillable = [
         'user_id',
         'truck_id',
+        'driver_id'
     ];
 
     public function user()
@@ -34,6 +35,11 @@ class Transaction extends Model
     public function payment_method()
     {
         return $this->belongsTo(PaymentMethod::class);
+    }
+
+    public function driver()
+    {
+        return $this->belongsTo(Driver::class);
     }
 
     public function transaction_detail()
