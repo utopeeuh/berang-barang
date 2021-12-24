@@ -27,7 +27,7 @@ body {
       margin-bottom: 370px;
     }
     .footer {
-      height: 25%;
+      height: 380px;
     }
 }
 
@@ -50,9 +50,8 @@ footer a {
 }
 
 footer a:hover, footer a:focus {
-  color: rgb(60, 98, 172);
+  color: rgb(255, 255, 255);
   text-decoration:none;
-  border-bottom:1px dotted #999;
 }
 
 footer .form-control {

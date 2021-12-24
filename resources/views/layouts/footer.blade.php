@@ -21,7 +21,7 @@
                 <br>
             </div>
             <div class="col-md-6">
-                <h5 class="text-md-right" style="padding: 10px">Contact Us</h5>
+                <h5 class="text-md-right" style="padding: 10px; text-align:center">Contact Us</h5>
                 <hr>
                 <form>
                     <fieldset class="form-group">
@@ -33,7 +33,7 @@
                     </fieldset>
                     <br>
                     <fieldset class="form-group text-xs-right">
-                        <button type="button" class="btn btn-outline-primary btn-sm" style="color: rgb(60, 98, 172)">Send</button>
+                        <button type="button" class="btn btn-outline-light">Send</button>
                     </fieldset>
                 </form>
             </div>
