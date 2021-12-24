@@ -23,10 +23,10 @@ body {
 /* Taller footer on small screens */
 @media (max-width: 567em) {
     body {
-      margin-bottom: 700px;
+      margin-bottom: 350px;
     }
     .footer {
-      height: 700px;
+      height: 350px;
     }
 }
 
@@ -44,7 +44,7 @@ footer a {
 }
 
 footer a:hover, footer a:focus {
-  color: #aaa;
+  color: rgb(60, 98, 172);
   text-decoration:none;
   border-bottom:1px dotted #999;
 }

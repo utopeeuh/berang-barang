@@ -15,7 +15,9 @@
 <body>
     @include('layouts.header')
     <div class="p-10">
+        <br>
         @yield('content')
+        <br>
     </div>
     @include('layouts.footer')
 

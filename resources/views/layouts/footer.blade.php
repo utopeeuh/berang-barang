@@ -2,9 +2,9 @@
     <div class="container">
         <div class="row">
             <div class="col-md-5">
-                <h5><img src="{{asset('assets/BoxBerang.png')}}" alt="" width="50px" style="padding-right: 5px"> BERANG BARANG</h5>
+                <h5><img src="{{asset('assets/BoxBerang.png')}}" alt="" width="50px" style="padding-right: 5px"> BERANG-BARANG</h5>
                 <div class="row">
-                    <div class="col-6" style="padding: 10px">
+                    <div class="col-6" style="padding: 10px; padding-left: 70px">
                         <ul class="list-unstyled">
                             <li><a href="">About Us</a></li>
                             <br>
@@ -37,7 +37,7 @@
             </div>
         </div>
         <div style="justify-content: center">
-            <p>&copy; BERANG BERANG. All rights reserved</p>
+            <p>&copy; BERANG-BARANG. All rights reserved</p>
         </div>
     </div>
 </footer>
