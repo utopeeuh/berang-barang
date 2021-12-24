@@ -20,7 +20,7 @@
 
                 <br>
             </div>
-            <div class="col-md-6">
+            <div class="col-md-6" style="justify-content:center">
                 <h5 class="text-md-right" style="padding: 10px; text-align:center">Contact Us</h5>
                 <hr>
                 <form>
