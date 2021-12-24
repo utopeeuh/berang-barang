@@ -23,10 +23,10 @@ body {
 /* Taller footer on small screens */
 @media (max-width: 567em) {
     body {
-      margin-bottom: 350px;
+      margin-bottom: 370px;
     }
     .footer {
-      height: 350px;
+      height: 380px;
     }
 }
 
@@ -57,3 +57,19 @@ footer .form-control {
     color: #d1d2d2;
     padding: 0.7em 1em;
 }
+
+
+footer .copyright {
+    display: flex;
+    justify-content: center;
+    font-size: 10px;
+}
+
+/* homepage */
+
+div .homepage{
+    padding: 50px;
+    justify-content: center;
+    text-align: center;
+}
+

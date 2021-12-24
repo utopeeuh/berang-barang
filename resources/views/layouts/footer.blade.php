@@ -20,23 +20,27 @@
 
                 <br>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-6">
                 <h5 class="text-md-right" style="padding: 10px">Contact Us</h5>
                 <hr>
                 <form>
                     <fieldset class="form-group">
                         <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
                     </fieldset>
+                    <br>
                     <fieldset class="form-group">
                         <textarea class="form-control" id="exampleMessage" placeholder="Message"></textarea>
                     </fieldset>
+                    <br>
                     <fieldset class="form-group text-xs-right">
-                        <button type="button" class="btn btn-secondary-outline btn-lg" style="color: rgb(160, 160, 160)">Send</button>
+                        <button type="button" class="btn btn-outline-primary btn-sm" style="color: rgb(60, 98, 172)">Send</button>
                     </fieldset>
                 </form>
             </div>
         </div>
-        <div style="justify-content: center">
+        <br>
+        <br>
+        <div class="copyright">
             <p>&copy; BERANG-BARANG. All rights reserved</p>
         </div>
     </div>
