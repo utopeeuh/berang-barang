@@ -1,7 +1,7 @@
 @extends('layouts.master')
 @section('content')
     <br>
-    <div style="padding-left: 10%; padding-right: 40%; padding-bottom: 100px">
+    <div style="padding-left: 20%; padding-right: 20%; padding-bottom: 100px">
         <h2>Order Details</h2>
         <form action="/order-store" method="POST">
 

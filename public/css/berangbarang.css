@@ -27,9 +27,12 @@ body {
       margin-bottom: 370px;
     }
     .footer {
-      height: 380px;
+      height: 25%;
     }
 }
+
+/* header */
+
 
 /* Sticky footer style and color
 -------------------------------------------------- */
@@ -75,4 +78,5 @@ div .homepage{
     justify-content: center;
     text-align: center;
 }
+
 
