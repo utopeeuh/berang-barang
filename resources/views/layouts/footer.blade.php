@@ -6,11 +6,10 @@
                 <div class="row">
                     <div class="col-6" style="padding: 10px; padding-left: 70px">
                         <ul class="list-unstyled">
-                            <li><a href="">About Us</a></li>
+                            <li><a href="#aboutus">About Us</a></li>
                             <br>
-                            <li><a href="">Benefits</a></li>
+                            <li><a href="#benefits">Benefits</a></li>
                             <br>
-                            <li><a href="">Our Team</a></li>
                         </ul>
                     </div>
                     <div class="col-6">
