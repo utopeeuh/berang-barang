@@ -4,9 +4,9 @@
         <div class="card-body">
             <h5 class="card-title"><b>Small Truck</b></h5>
             <br>
-            <p class="card-text">anak</p>
-            <p class="card-text">anjing</p>
-            <p class="card-text">kimak</p>
+            <p class="card-text">Dimension: 10 x 10 x 10</p>
+            <p class="card-text">Support: 100</p>
+            <p class="card-text">Description: It's a small truck</p>
         </div>
         <input type="radio" id="small-truck" name="truck_id" value="1" required>
     </div>
@@ -16,9 +16,9 @@
         <div class="card-body">
             <h5 class="card-title"><b>Medium Truck</b></h5>
             <br>
-            <p class="card-text">DIMENSIONS HERE</p>
-            <p class="card-text">SUPPORTS HERE</p>
-            <p class="card-text">DESCRIPTION HERE</p>
+            <p class="card-text">Dimension: 20 x 20 x 20</p>
+            <p class="card-text">Support: 200</p>
+            <p class="card-text">Description: It's a medium truck</p>
         </div>
         <input type="radio" id="medium-truck" name="truck_id" value="2">
     </div>
@@ -28,9 +28,9 @@
         <div class="card-body">
             <h5 class="card-title"><b>Large Truck</b></h5>
             <br>
-            <p class="card-text">DIMENSIONS HERE</p>
-            <p class="card-text">SUPPORTS HERE</p>
-            <p class="card-text">DESCRIPTION HERE</p>
+            <p class="card-text">Dimension: 30 x 30 x 30</p>
+            <p class="card-text">Support: 200</p>
+            <p class="card-text">Description: It's a large truck</p>
         </div>
         <input type="radio" id="large-truck" name="truck_id" value="3">
     </div>
